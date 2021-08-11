@@ -41,7 +41,7 @@ app.post('/products', (req, res) => {
     });
     res.send({ msg: 'All good' });
   } else {
-    res.status(400).send({ msg: 'BAD Obj' });
+    res.status(400).send({ msg: 'Bad data' });
   }
 });
 
@@ -50,7 +50,7 @@ app.delete('/products/:id', (req, res) => {
     products = products.filter((x) => x.id !== req.params.id);
     res.send({ msg: 'Deleted' });
   } else {
-    res.status(400).send({ msg: 'BAD' });
+    res.status(400).send({ msg: 'Not found' });
   }
 });
 
